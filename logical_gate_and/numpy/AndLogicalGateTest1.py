@@ -26,9 +26,9 @@ bias = np.random.random(1)
 
 output = None
 
-# Train for 500000 iterations
+# Train for 10000 iterations
 learning_rate = 0.1
-for epoch in range(500000):
+for epoch in range(10000):
     # Forward pass
     z = np.dot(X, weights) + bias
     output = sigmoid(z)
