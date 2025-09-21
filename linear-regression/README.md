@@ -83,6 +83,49 @@ Since we have two parameters (θ₀ and θ₁), the partial derivative form expa
 θ₁ = θ₁ - α * ∂J(θ)/∂θ₁
 ```
 
+### Gradient Derivation: From MSE to Implementation
+
+**Starting with the MSE Cost Function:**
+```
+J(θ) = (1/2m) * Σᵢ₌₁ᵐ (hθ(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
+```
+Where `hθ(x⁽ⁱ⁾) = θ₀ + θ₁x⁽ⁱ⁾` (our prediction for sample i)
+
+**In Matrix Form:**
+```
+J(θ) = (1/2m) * ||X_b·θ - y||²
+J(θ) = (1/2m) * (X_b·θ - y)ᵀ(X_b·θ - y)
+```
+
+**Taking the Derivative:**
+To find ∂J(θ)/∂θ, we use the chain rule:
+```
+∂J(θ)/∂θ = ∂/∂θ[(1/2m) * (X_b·θ - y)ᵀ(X_b·θ - y)]
+```
+
+**Step-by-Step Differentiation:**
+1. Let `e = X_b·θ - y` (prediction errors)
+2. Then `J(θ) = (1/2m) * eᵀe`
+3. Using chain rule: `∂J(θ)/∂θ = (1/2m) * 2eᵀ * ∂e/∂θ`
+4. Since `∂e/∂θ = ∂(X_b·θ - y)/∂θ = X_bᵀ`
+5. We get: `∂J(θ)/∂θ = (1/2m) * 2(X_b·θ - y)ᵀ * X_bᵀ`
+
+**Final Gradient Formula:**
+```
+∂J(θ)/∂θ = (1/m) * X_bᵀ * (X_b·θ - y)
+```
+
+**Code Implementation:**
+The code now uses `1/m`, which perfectly matches our mathematical derivation:
+```python
+gradients = 1/m * X_b.T.dot(X_b.dot(theta) - y)
+```
+
+**Why This Derivation Matters:**
+- Shows that gradient descent isn't magic - it's pure calculus
+- Explains where the `X_b.T.dot(...)` formula comes from
+- Demonstrates how we systematically find the direction of steepest descent
+
 ## Implementation Details
 
 | Feature | Value | Purpose |

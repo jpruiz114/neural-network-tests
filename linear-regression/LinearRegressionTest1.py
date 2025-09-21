@@ -14,12 +14,12 @@ X_b = np.c_[np.ones((m, 1)), X]
 theta = np.random.randn(2, 1)
 
 # Learning rate and number of iterations
-learning_rate = 0.1
+learning_rate = 0.05
 iterations = 1000
 
 # Gradient Descent
 for i in range(iterations):
-    gradients = 2/m * X_b.T.dot(X_b.dot(theta) - y)
+    gradients = 1/m * X_b.T.dot(X_b.dot(theta) - y)
     theta -= learning_rate * gradients
 
 # Predictions
