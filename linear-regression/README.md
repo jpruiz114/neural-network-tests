@@ -93,6 +93,54 @@ Since we have two parameters (θ₀ and θ₁), the partial derivative form expa
 | **Iterations** | 1000 | Ensure full convergence |
 | **Noise Level** | Standard normal | Realistic data simulation |
 
+## Code Breakdown: Gradient Descent Implementation
+
+The core gradient descent loop in the code:
+```python
+# Gradient Descent
+for i in range(iterations):
+    gradients = 2/m * X_b.T.dot(X_b.dot(theta) - y)
+    theta -= learning_rate * gradients
+```
+
+**Line-by-Line Explanation:**
+
+1. **`for i in range(iterations):`**
+   - Repeats the optimization process for 1000 iterations
+   - Each iteration improves the parameter estimates
+
+2. **`X_b.dot(theta)`** (part of line 2)
+   - Matrix multiplication: X_b × θ 
+   - Calculates current predictions: ŷ = θ₀ + θ₁x for all data points
+   - This is our model's current guess
+
+3. **`X_b.dot(theta) - y`** (part of line 2)
+   - Calculates prediction errors: (predictions - actual_values)
+   - Shows how far off our current model is for each data point
+
+4. **`X_b.T.dot(X_b.dot(theta) - y)`** (part of line 2)
+   - Matrix multiplication: X_b^T × (prediction_errors)
+   - Computes the gradient direction for each parameter
+   - X_b.T is the transpose of X_b
+
+5. **`2/m * X_b.T.dot(X_b.dot(theta) - y)`**
+   - Scales by 2/m (where m=100 is number of samples)
+   - The "2" comes from differentiating the squared error
+   - The "1/m" averages the gradient over all training examples
+
+6. **`theta -= learning_rate * gradients`**
+   - Updates parameters: θ_new = θ_old - α × gradient
+   - Moves parameters in direction that reduces cost
+   - learning_rate (α = 0.1) controls step size
+
+**What's Happening Mathematically:**
+- **Prediction**: Calculate ŷ = X_b × θ
+- **Error**: Find difference between predictions and actual values  
+- **Gradient**: Compute ∂J(θ)/∂θ = (2/m) × X_b^T × (ŷ - y)
+- **Update**: Move parameters opposite to gradient direction
+
+The gradient points in the direction of *steepest increase* in cost, so moving in the *opposite direction* (subtracting the gradient) reduces the cost function, gradually improving our model's accuracy.
+
 ## Key Learning Concepts
 
 ### 1. **Gradient Descent Algorithm**
