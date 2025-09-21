@@ -8,7 +8,7 @@ Neural network implementations for logical gates using NumPy and PyTorch.
 python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
 # venv\Scripts\activate  # Windows
-pip install numpy torch
+pip install matplotlib numpy torch
 ```
 
 ## Usage
