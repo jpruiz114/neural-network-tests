@@ -41,7 +41,9 @@ neural-network-tests/
 - [XNOR Gate](./logical-gate-xnor/) - Complex architectures
 - [Linear Regression](./linear-regression/) - Mathematical foundations
 
-## Architecture Guide
+## Architecture Guide (Logical Gates Only)
+
+This guide applies specifically to **binary classification problems** (logical gates), not regression tasks like linear regression.
 
 | Gate | Layers | Architecture | Reason |
 |------|--------|--------------|--------|
@@ -49,6 +51,8 @@ neural-network-tests/
 | XOR, XNOR | 2+ | 2→4→1 | Not linearly separable |
 
 **Rule**: Start simple, add complexity only if needed.
+
+*Note: Linear regression uses different architectural principles (continuous output, MSE optimization) and is not covered by this binary classification guide.*
 
 ## Learning Modules
 
