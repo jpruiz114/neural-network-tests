@@ -16,11 +16,11 @@ def run_and_gate_numpy():
     print("Running AND Gate Test (NumPy Implementation)")
     print("="*50)
     try:
-        subprocess.run([sys.executable, "and_gate_tests/AndLogicalGateTest1.py"], check=True)
+        subprocess.run([sys.executable, "logical-gate-and/AndLogicalGateTest1.py"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running AND gate NumPy test: {e}")
     except FileNotFoundError:
-        print("Error: and_gate_tests/AndLogicalGateTest1.py not found")
+        print("Error: logical-gate-and/AndLogicalGateTest1.py not found")
 
 def run_and_gate_pytorch():
     """Run the PyTorch implementation of AND gate."""
@@ -28,11 +28,11 @@ def run_and_gate_pytorch():
     print("Running AND Gate Test (PyTorch Implementation)")
     print("="*50)
     try:
-        subprocess.run([sys.executable, "and_gate_tests/AndLogicalGateTest2.py"], check=True)
+        subprocess.run([sys.executable, "logical-gate-and/AndLogicalGateTest2.py"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running AND gate PyTorch test: {e}")
     except FileNotFoundError:
-        print("Error: and_gate_tests/AndLogicalGateTest2.py not found")
+        print("Error: logical-gate-and/AndLogicalGateTest2.py not found")
 
 def run_xor_gate_pytorch():
     """Run the PyTorch implementation of XOR gate."""
@@ -40,11 +40,11 @@ def run_xor_gate_pytorch():
     print("Running XOR Gate Test (PyTorch Implementation)")
     print("="*50)
     try:
-        subprocess.run([sys.executable, "XorLogicalGateTest1.py"], check=True)
+        subprocess.run([sys.executable, "logical-gate-xor/XorLogicalGateTest1.py"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running XOR gate PyTorch test: {e}")
     except FileNotFoundError:
-        print("Error: XorLogicalGateTest1.py not found")
+        print("Error: logical-gate-xor/XorLogicalGateTest1.py not found")
 
 def run_all_tests():
     """Run all neural network tests."""
