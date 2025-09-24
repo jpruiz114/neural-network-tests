@@ -21,16 +21,25 @@ python main.py  # Interactive menu
 
 ```
 neural-network-tests/
-├── main.py                  # Interactive menu
-├── linear-regression/       # Linear regression implementation
-├── logical_gate_and/        # AND gate implementations
-├── logical_gate_or/         # OR gate implementations  
-├── logical_gate_xor/        # XOR gate implementations
-├── logical_gate_xnor/       # XNOR gate implementations
-├── logical_gate_not/        # NOT gate implementations
-├── logical_gate_nand/       # NAND gate implementations
+├── main.py                     # Interactive menu
+├── linear-regression/          # Linear regression implementation
+├── logical-gate-and/           # AND gate implementations
+├── logical-gate-or/            # OR gate implementations  
+├── logical-gate-xor/           # XOR gate implementations
+├── logical-gate-xnor/          # XNOR gate implementations
+├── logical-gate-not/           # NOT gate implementations
+├── logical-gate-nand/          # NAND gate implementations
 └── README.md
 ```
+
+**Direct Links:**
+- [AND Gate](./logical-gate-and/) - Simple neural networks (start here)
+- [OR Gate](./logical-gate-or/) - Basic classification
+- [NOT Gate](./logical-gate-not/) - Single input networks
+- [NAND Gate](./logical-gate-nand/) - Inverted logic
+- [XOR Gate](./logical-gate-xor/) - Non-linear problems
+- [XNOR Gate](./logical-gate-xnor/) - Complex architectures
+- [Linear Regression](./linear-regression/) - Mathematical foundations
 
 ## Architecture Guide
 
@@ -43,59 +52,42 @@ neural-network-tests/
 
 ## Learning Modules
 
-### Linear Regression (`linear-regression/`)
-Foundation module demonstrating core machine learning concepts:
-- **Gradient Descent Algorithm**: Core optimization technique used in neural networks
-- **Cost Function Minimization**: Shows how algorithms learn from data
-- **Mathematical Derivation**: Complete derivation from MSE to gradient formula
-- **Pure NumPy Implementation**: Understanding without high-level frameworks
-- **Visualization**: See the learning process in action
-
-**Key Learning**: Understanding gradient-based optimization - the foundation of all neural networks.
-
-### Logical Gates (`logical_gate_*/`)
-Neural network implementations for basic logical operations:
-- **Educational Progression**: From simple (AND) to complex (XOR) problems
-- **Architecture Comparison**: When to use simple vs complex networks  
+### 1. Simple Logical Gates ([`logical-gate-and/`](./logical-gate-and/), [`logical-gate-or/`](./logical-gate-or/), [`logical-gate-not/`](./logical-gate-not/), [`logical-gate-nand/`](./logical-gate-nand/))
+Perfect introduction to neural networks using familiar boolean logic:
+- **Binary Classification**: Clear inputs (0/1) and outputs (True/False)
+- **Immediate Intuition**: Everyone understands AND, OR, NOT operations
+- **Single Layer Networks**: Linearly separable problems need minimal architecture
 - **Multiple Implementations**: Both NumPy and PyTorch versions
-- **Optimization Techniques**: Weight initialization, learning rates, early stopping
+- **Quick Wins**: Fast training, clear success metrics
 
-**Key Learning**: How network architecture relates to problem complexity.
+**Key Learning**: How neural networks learn simple patterns and basic classification.
+
+### 2. Complex Logical Gates ([`logical-gate-xor/`](./logical-gate-xor/), [`logical-gate-xnor/`](./logical-gate-xnor/))
+Introduction to non-linear problems and deeper architectures:
+- **Non-Linear Separability**: Why some problems need hidden layers
+- **Architecture Design**: When to add complexity to your network
+- **Historical Significance**: The XOR problem that drove neural network research
+- **Multi-Layer Networks**: Introduction to hidden layers and non-linear activation
+
+**Key Learning**: Why network depth matters and when simple solutions aren't enough.
+
+### 3. Linear Regression ([`linear-regression/`](./linear-regression/))
+Advanced foundation module with deep mathematical understanding:
+- **Gradient Descent Mastery**: Complete mathematical derivation from first principles
+- **Continuous Outputs**: Move beyond binary classification to regression
+- **Cost Function Theory**: Deep dive into MSE and optimization landscapes
+- **Mathematical Rigor**: Full calculus derivations showing the "why" behind algorithms
+- **Vectorized Implementation**: Efficient NumPy operations at scale
+
+**Key Learning**: Mathematical foundations of optimization - the theory behind all neural networks.
 
 ## Getting Started
-
-### Recommended Learning Path
-
-1. **Start with Linear Regression** (`linear-regression/`):
-   ```bash
-   cd linear-regression
-   python LinearRegressionTest1.py
-   ```
-   - Understand gradient descent fundamentals
-   - See mathematical derivations in action
-   - Visualize the learning process
-
-2. **Simple Logical Gates** (`logical_gate_and/`, `logical_gate_or/`):
-   ```bash
-   cd logical_gate_and
-   python AndLogicalGateTest2.py  # Optimal PyTorch version
-   ```
-   - Learn basic neural network architecture
-   - See how networks learn simple patterns
-
-3. **Complex Logical Gates** (`logical_gate_xor/`):
-   ```bash
-   cd logical_gate_xor  
-   python XorLogicalGateTest1.py
-   ```
-   - Understand why some problems need deeper networks
-   - See non-linearly separable problems in action
 
 ### Quick Demo (Interactive Menu)
 ```bash
 python main.py
 ```
-*Note: The main menu currently covers logical gates. Linear regression can be run directly from its folder.*
+*Note: The main menu currently covers [logical gates](./logical-gate-and/). [Linear regression](./linear-regression/) can be run directly from its folder.*
 
 ## Educational Philosophy
 
@@ -109,11 +101,11 @@ This project follows a **"foundations-first"** approach to understanding neural 
 - **Mathematical Foundations**: Complete derivations showing the "why" behind algorithms
 
 ### Why This Approach?
-1. **Build Intuition**: Start with interpretable problems (linear regression, logical gates)
+1. **Build Intuition**: Start with interpretable problems (logical gates, then linear regression)
 2. **Show the Math**: Complete mathematical derivations demystify the algorithms
 3. **Multiple Implementations**: Compare pure NumPy vs PyTorch to understand abstractions
 4. **Hands-On Learning**: Run code, see results, modify parameters
-5. **Progression**: From simple (linear) to complex (non-linear) problems
+5. **Progression**: From simple binary classification to complex architectures to mathematical mastery
 
 ### Learning Outcomes
 After completing these modules, you'll understand:
