@@ -143,7 +143,7 @@ gradients = 1/m * X_b.T.dot(X_b.dot(theta) - y)
 |---------|-------|---------|
 | **Data Points** | 100 samples | Sufficient for stable learning |
 | **True Parameters** | θ₀=4, θ₁=3 | Known ground truth |
-| **Learning Rate** | 0.1 | Balanced convergence speed |
+| **Learning Rate** | 0.05 | Balanced convergence speed |
 | **Iterations** | 1000 | Ensure full convergence |
 | **Noise Level** | Standard normal | Realistic data simulation |
 
@@ -185,7 +185,7 @@ for i in range(iterations):
 6. **`theta -= learning_rate * gradients`**
    - Updates parameters: θ_new = θ_old - α × gradient
    - Moves parameters in direction that reduces cost
-   - learning_rate (α = 0.1) controls step size
+   - learning_rate (α = 0.05) controls step size
 
 **What's Happening Mathematically:**
 - **Prediction**: Calculate ŷ = X_b × θ
