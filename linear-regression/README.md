@@ -106,9 +106,14 @@ To find ∂J(θ)/∂θ, we use the chain rule:
 **Step-by-Step Differentiation:**
 1. Let `e = X_b·θ - y` (prediction errors)
 2. Then `J(θ) = (1/2m) * eᵀe`
+
+The rule used here is the matrix calculus rule for a quadractic form:
+
+∇θ​[(Aθ−b)ᵀ(Aθ−b)] = 2Aᵀ(Aθ−b)
+
 3. Using chain rule: `∂J(θ)/∂θ = (1/2m) * 2eᵀ * ∂e/∂θ`
 4. Since `∂e/∂θ = ∂(X_b·θ - y)/∂θ = X_bᵀ`
-5. We get: `∂J(θ)/∂θ = (1/2m) * 2(X_b·θ - y)ᵀ * X_bᵀ`
+5. We get: `∂J(θ)/∂θ = (1/2m) * 2 * X_bᵀ * (X_b·θ - y)`
 
 **Final Gradient Formula:**
 ```
