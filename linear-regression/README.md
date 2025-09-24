@@ -127,7 +127,7 @@ To find ∂J(θ)/∂θ, we use the chain rule:
 ```
 
 **Code Implementation:**
-The code now uses `1/m`, which perfectly matches our mathematical derivation:
+The code matches our mathematical derivation:
 ```python
 gradients = 1/m * X_b.T.dot(X_b.dot(theta) - y)
 ```
