@@ -153,7 +153,7 @@ The core gradient descent loop in the code:
 ```python
 # Gradient Descent
 for i in range(iterations):
-    gradients = 2/m * X_b.T.dot(X_b.dot(theta) - y)
+    gradients = 1/m * X_b.T.dot(X_b.dot(theta) - y)
     theta -= learning_rate * gradients
 ```
 
@@ -177,10 +177,10 @@ for i in range(iterations):
    - Computes the gradient direction for each parameter
    - X_b.T is the transpose of X_b
 
-5. **`2/m * X_b.T.dot(X_b.dot(theta) - y)`**
-   - Scales by 2/m (where m=100 is number of samples)
-   - The "2" comes from differentiating the squared error
+5. **`1/m * X_b.T.dot(X_b.dot(theta) - y)`**
+   - Scales by 1/m (where m=100 is number of samples)
    - The "1/m" averages the gradient over all training examples
+   - This matches our mathematical derivation exactly
 
 6. **`theta -= learning_rate * gradients`**
    - Updates parameters: θ_new = θ_old - α × gradient
@@ -190,7 +190,7 @@ for i in range(iterations):
 **What's Happening Mathematically:**
 - **Prediction**: Calculate ŷ = X_b × θ
 - **Error**: Find difference between predictions and actual values  
-- **Gradient**: Compute ∂J(θ)/∂θ = (2/m) × X_b^T × (ŷ - y)
+- **Gradient**: Compute ∂J(θ)/∂θ = (1/m) × X_b^T × (ŷ - y)
 - **Update**: Move parameters opposite to gradient direction
 
 The gradient points in the direction of *steepest increase* in cost, so moving in the *opposite direction* (subtracting the gradient) reduces the cost function, gradually improving our model's accuracy.
