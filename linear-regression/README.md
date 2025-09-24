@@ -104,11 +104,22 @@ To find ∂J(θ)/∂θ, we use the chain rule:
 ```
 
 **Step-by-Step Differentiation:**
-1. Let `e = X_b·θ - y` (prediction errors)
-2. Then `J(θ) = (1/2m) * eᵀe`
-3. Using chain rule: `∂J(θ)/∂θ = (1/2m) * 2eᵀ * ∂e/∂θ`
-4. Since `∂e/∂θ = ∂(X_b·θ - y)/∂θ = X_bᵀ`
-5. We get: `∂J(θ)/∂θ = (1/2m) * 2(X_b·θ - y)ᵀ * X_bᵀ`
+
+1. **Start with the cost function in matrix form:**
+   ```
+   J(θ) = (1/2m) * (X_b·θ - y)ᵀ(X_b·θ - y)
+   ```
+
+2. **Apply the matrix calculus rule for quadratic forms:**
+   ```
+   ∇θ[(Aθ−b)ᵀ(Aθ−b)] = 2Aᵀ(Aθ−b)
+   ```
+   Where `A = X_b` and `b = y`
+
+3. **Calculate the gradient:**
+   ```
+   ∇J(θ) = (1/2m) * 2 * X_bᵀ * (X_b·θ - y) = (1/m) * X_bᵀ * (X_b·θ - y)
+   ```
 
 **Final Gradient Formula:**
 ```
